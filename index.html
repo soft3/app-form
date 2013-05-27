@@ -36,42 +36,23 @@ function pappo(data)
 
 function pluto()
 {
-	//var contatto = { "nome": "mario", "cognome": "rossi" };
-
 	var contatto = new Object();
 
 	contatto.nome = document.form1.nome.value;
 	contatto.cognome = document.form1.cognome.value;
 
 	$.getJSON( "http://www.youngo.it/json_test.php?callback=?", contatto,function(data)
-	{
-		var items = [];
-		$.each(data, function(key, val) {
-			items.push('<li id="' + key + '">' + val + '</li>');
-		});
-		$('<ul/>', {
-			'class': 'my-new-list',
-			html: items.join('')
-		}).appendTo('body');	
-	}
-	);
-
-	/*
-	$.ajax({
-		type: "GET",
-		url: "http://www.youngo.it/json_test.php",
-		crossDomain: true,
-		data: contatto,
-		dataType: 'json',
-		success: function(responseData, textStatus, jqXHR) {
-			//var value = responseData.someKey;
-			alert(responseData.toSource());
-		},
-		error: function (responseData, textStatus, errorThrown) {
-			alert('GET failed.\n' + textStatus.toSource());
+		{
+			var items = [];
+			$.each(data, function(key, val) {
+				items.push('<li id="' + key + '">' + val + '</li>');
+			});
+			$('<ul/>', {
+				'class': 'my-new-list',
+				html: items.join('')
+			}).appendTo('body');
 		}
-	})
-	*/
+	);
 }
 
 function validate()
@@ -219,18 +200,6 @@ function validate()
 	}
 
 	pluto();
-
-	//var contatto = { "contatto": [
-	//	{ "nome": "mario", "cognome": "rossi" }
-	//]};
-
-	//alert(contatto);
-
-	//jQuery.post("http://www.youngo.it/json_test.php", {json: JSON.stringify(contatto)}, function(data){ alert(data); });
-
-	//$.post('http://www.youngo.it/json_test.php', function(data) {
-	//	$('.result').html(data);
-	//});
 }
 //-->
 </script>
