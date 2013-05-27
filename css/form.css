@@ -1,0 +1,82 @@
+.Stile1 {
+	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+}
+form {
+	width: 640px;
+	height: 960px;
+	background-image: url('../images/bg.jpg');
+}
+label {
+	width: 310px;
+	font: 20px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+}
+input {
+	border: none;
+	background: url('../images/invia.png') no-repeat;
+	width: 117px;
+	height: 36px;
+}
+.nome {
+	border: none;
+	background: url('../images/nome.png') no-repeat;
+	width: 251px;
+	height: 42px;
+	padding-left: 24px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.telefono {
+	border: none;
+	background: url('../images/telefono.png') no-repeat;
+	width: 251px;
+	height: 42px;
+	padding-left: 24px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.email {
+	border: none;
+	background: url('../images/email.png') no-repeat;
+	width: 251px;
+	height: 42px;
+	padding-left: 24px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.interesse {
+	width: 15px;
+	height: 15px;
+	font: 15px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+	background: none;
+}
+fieldset {
+	border: none;
+}
+textarea {
+	border: none;
+	width: 536px;
+	height: 217px;
+	background: url('../images/commenti.png') no-repeat;
+	overflow: hidden;
+	padding-left: 40px;
+	padding-top: 6px;
+	padding-right: 4px;
+}
+#user-error {
+	width: 524px;
+	padding-top: 120px;
+	padding-left: 20px;
+}
+#user-message {
+	width: 504px;
+	padding-left: 20px;
+}
+#user-details {
+	width: 600px;
+	height: 8000px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
