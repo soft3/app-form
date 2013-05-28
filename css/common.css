@@ -1,0 +1,75 @@
+html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+}
+
+img { border:0 }
+
+input {
+	border: none;
+	background: url('../images/invia.png') no-repeat;
+	width: 117px;
+	height: 36px;
+	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
+}
+.nome {
+	border: none;
+	background: url('../images/nome.png') no-repeat;
+	width: 250px;
+	height: 42px;
+	padding-left: 26px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.telefono {
+	border: none;
+	background: url('../images/telefono.png') no-repeat;
+	width: 250px;
+	height: 42px;
+	padding-left: 26px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.email {
+	border: none;
+	background: url('../images/email.png') no-repeat;
+	width: 250px;
+	height: 42px;
+	padding-left: 26px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
+.interesse {
+	width: 15px;
+	height: 15px;
+	font: 15px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+	background: none;
+}
+
+fieldset {
+	border: none;
+}
+
+#loader {
+	z-index:1000;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#000;
+	opacity:0.45;
+	-moz-opacity:0.45;
+	filter:alpha(opacity=45);
+	visibility:hidden;
+}
+
+#loader img {
+position: absolute;
+top: 50%;
+left: 50%;
+}

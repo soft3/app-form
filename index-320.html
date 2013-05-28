@@ -3,6 +3,7 @@
 <head>
 <title>YOUNGO Contact Form</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/form-320.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/local_ajax.js"></script>
@@ -14,7 +15,7 @@
 	});
 </script>
 <div style="width: 320px; height: 960px; background: url('images/bg-320.png') no-repeat;">
-  <div style="text-align: center" class="Stile1">Vuoi prenotare la tua Festa presso il centro <b>YOUNGO Nola</b> ?<br />
+  <div style="text-align: center; padding-top: 5px;" class="Stile1">Vuoi prenotare la tua Festa presso il centro <b>YOUNGO Nola</b> ?<br />
     Compila il form sottostante con i tuoi dati, sarai ricontattato al più presto dal nostro personale.
     <script type="text/javascript">
 		document.write("Risoluzione è di " +screen.width + "x" +screen.height)
@@ -187,7 +188,7 @@
       <option value="19">19</option>
     </select>
     <br />
-    <label>Potrebbe Interessarti<br /></label>
+    <label>Potrebbe Interessarti<br /></label><span class="Stile1" >
     <input name="interesse1" type="checkbox" class="interesse" value="Animazione" />Animazione<br />
     <input name="interesse2" type="checkbox" class="interesse" value="Mascotte" />Mascotte<br />
     <input name="interesse3" type="checkbox" class="interesse" value="Trucca Bimbi" />Trucca Bimbi<br />
@@ -195,17 +196,17 @@
     <input name="interesse5" type="checkbox" class="interesse" value="Stampa Foto Evento" />Stampa Foto Evento<br />
     <input name="interesse6" type="checkbox" class="interesse" value="Festa a Tema" />Festa a Tema<br />
     <input name="interesse7" type="checkbox" class="interesse" value="Torta Personalizzata" />Torta Personalizzata<br />
-    <br />
+	</span>
     <label for="descrizione">Ulteriori Commenti</label>
     <br />
     <textarea name="descrizione" rows="0" cols="0"></textarea>
     <br />
-	<label for="liberatoria"><span class="Stile1" >Liberatoria Trattamento Dati (Dlg 196/03)</span></label>
+	<label for="liberatoria"><span class="Stile1" style>Liberatoria Trattamento Dati (Dlg 196/03)</span></label>
 	<input type="checkbox" name="liberatoria" value="1" class="interesse"/>
 	<div id="loader">
 	    <img src="images/ajax-loader.gif"/>
 	</div>
-	<div align="right">
+	<div align="right" style="margin-top: 8px;">
 		<input type="button" name="button" value="" onclick="validate();" />
 	</div>
     </fieldset>
