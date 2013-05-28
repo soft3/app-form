@@ -87,15 +87,21 @@ textarea {
 	padding-right: 4px;
 	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
 }
-#user-error {
-	width: 524px;
-	padding-top: 120px;
-	padding-left: 20px;
+
+#loader {
+	z-index:1000;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#000;
+	opacity:0.45;
+	-moz-opacity:0.45;
+	filter:alpha(opacity=45);
+	visibility:hidden;
 }
-#user-message {
-	width: 504px;
-	padding-left: 20px;
-}
+
 #user-details {
 	width: 600px;
 	height: 840px;
