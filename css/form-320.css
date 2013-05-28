@@ -9,7 +9,7 @@ html{
 body {
 	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
 	margin:0;
-	color:#FFF;
+	color:#000;
 	min-width:320px;
 	height: auto;	/* per i browser moderni */
 	height: 1000px;	/* per IE5.x e IE6 */
@@ -100,6 +100,12 @@ textarea {
 	-moz-opacity:0.45;
 	filter:alpha(opacity=45);
 	visibility:hidden;
+}
+
+#loader img {
+position: absolute;
+top: 50%;
+left: 50%;
 }
 
 #user-details {

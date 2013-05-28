@@ -102,6 +102,12 @@ textarea {
 	visibility:hidden;
 }
 
+#loader img {
+position: absolute;
+top: 50%;
+left: 50%;
+}
+
 #user-details {
 	width: 600px;
 	height: 840px;

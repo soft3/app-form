@@ -53,17 +53,17 @@ function pluto()
 	contatto.nome = document.form1.nome.value;
 	contatto.cognome = document.form1.cognome.value;
 
+	var loader = document.getElementById('loader');
+	loader.style.visibility = 'visible'
+
 	$.ajax({
 		url: "http://www.youngo.it/json_test.php?callback=?",
 		type: "GET",
 		dataType: "json",
 		data: contatto,
 		timeout: 10000,
-		beforeSend: function() {
-			$('#loader').show();
-		},
 		complete: function(){
-			$('#loader').hide();
+			loader.style.visibility = 'hidden'
 		},
 		success: function(data)
 		{
@@ -78,7 +78,7 @@ function pluto()
 		},
 		error: function(x, t, m) {
 			if(t==="timeout") {
-				alert("Nessuna risposta dal Serve!\nControllare l'accesso ad Internet e riprovare più tardi, grazie!");
+				alert("Nessuna risposta dal Server!\nControllare l'accesso ad Internet e riprovare più tardi, grazie!");
 			} else {
 				alert(t);
 			}
