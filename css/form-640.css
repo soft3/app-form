@@ -2,10 +2,8 @@ body {
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 	margin:0;
 	color:#000;
-	min-width:640px;
-	height: auto;	/* per i browser moderni */
-	height: 960px;	/* per IE5.x e IE6 */
-	min-height: 960px;
+	width:640px;
+	height: 960px;
 	position:relative;
 }
 

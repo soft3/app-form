@@ -2,10 +2,8 @@ body {
 	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
 	margin:0;
 	color:#000;
-	min-width:320px;
-	/*height: auto;	*//* per i browser moderni */
-	height: 960px;	/* per IE5.x e IE6 */
-	/*min-height: 960px;*/
+	width:320px;
+	height: 1000px;
 	position:relative;
 }
 
@@ -39,7 +37,7 @@ textarea {
 
 #user-details {
 	width: 300px;
-	height: 840px;
+	height: 880px;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 0px;

@@ -4,15 +4,15 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "net.soft3.app-form"
-        version = "1.0.2">
+        version = "1.0.3">
 
-    <name>APP Form</name>
+    <name>YOUNGO Form</name>
 
     <description>
-        APP Form Example
+        YOUNGO Form for FEC
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://phonegap.com" email="massimiliano.tretene@gmail.com">
         Soft3
     </author>
 
