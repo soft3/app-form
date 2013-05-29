@@ -14,12 +14,11 @@
 		alert( "Triggered ajaxError handler.\n" + settings.toSource() );
 	});
 </script>
-<div style="width: 320px; height: 960px; background: url('images/bg-320.png') no-repeat;">
+<div style="width: 320px; height: 1040px; background: url('images/bg-320.png') no-repeat;">
   <div style="text-align: center; padding-top: 5px;" class="Stile1">Vuoi prenotare la tua Festa presso il centro <b>YOUNGO Nola</b> ?<br />
     Compila il form sottostante con i tuoi dati, sarai ricontattato al più presto dal nostro personale.
   </div>
   <form name="form1" action="" method="post">
-    <fieldset id="user-details">
     <label>Nome*<br />
     </label>
     <input type="text" name="nome" class="nome" value="" size="40" maxlength="42" required="required" />
@@ -194,11 +193,11 @@
     <input name="interesse6" type="checkbox" class="interesse" value="Festa a Tema" />Festa a Tema<br />
     <input name="interesse7" type="checkbox" class="interesse" value="Torta Personalizzata" />Torta Personalizzata<br />
 	</span>
-    <label for="descrizione">Ulteriori Commenti</label>
+    <label for="descrizione" style="margin-left: -10px;">Ulteriori Commenti</label>
     <br />
     <textarea name="descrizione" rows="0" cols="0"></textarea>
     <br />
-	<label for="liberatoria"><span class="Stile1" style>Liberatoria trattamento dati (Dlg 196/03)</span></label>
+	<label for="liberatoria"><span class="Stile1" style="margin-left: -10px;">Liberatoria trattamento dati (Dlg 196/03)</span></label>
 	<input type="checkbox" name="liberatoria" value="1" class="interesse"/>
 	<div id="loader">
 	    <img src="images/ajax-loader.gif"/>
@@ -206,8 +205,6 @@
 	<div align="right" style="margin-top: 8px;">
 		<input type="button" name="button" value="" onclick="validate();" />&nbsp;&nbsp;
 	</div>
-    </fieldset>
-    <!-- end user-message -->
   </form>
   <br />
 </div>

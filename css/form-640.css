@@ -12,9 +12,9 @@ body {
 	color: #FFF;
 }
 form {
-	width: 640px;
-	/* height: 960px; */
+	width: 620px;
 	background-image: url('../images/bg.jpg');
+	padding-left: 20px;
 }
 
 label {
