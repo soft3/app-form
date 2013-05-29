@@ -13,7 +13,6 @@ body {
 }
 form {
 	width: 320px;
-	/* height: 960px; */
 	background-image: url('../images/bg-320.jpg');
 }
 
@@ -36,9 +35,8 @@ textarea {
 }
 
 #user-details {
-	width: 300px;
+	width: 310px;
 	height: 880px;
 	padding-top: 10px;
-	padding-left: 10px;
 	padding-right: 0px;
 }
