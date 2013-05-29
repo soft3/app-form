@@ -3,19 +3,19 @@ body {
 	margin:0;
 	color:#000;
 	min-width:320px;
-	height: auto;	/* per i browser moderni */
+	/*height: auto;	*//* per i browser moderni */
 	height: 960px;	/* per IE5.x e IE6 */
-	min-height: 960px;
+	/*min-height: 960px;*/
 	position:relative;
 }
 
 .Stile1 {
-	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
+	font: 15px normal Verdana, Arial, Helvetica, sans-serif;
 	color: #FFF;
 }
 form {
 	width: 320px;
-	height: 960px;
+	/* height: 960px; */
 	background-image: url('../images/bg-320.jpg');
 }
 
