@@ -17,21 +17,21 @@
 	document.body.style.height = hh;
 </script>
 <div id="centro" style="width: 320px; height: 100%; background: url('images/bg2.png') repeat;">
-	<script>	
-		var xres = screen.width;
-		var yres = +screen.height;
-		var xdpi = document.documentElement.clientWidth;
-		var ydpi = document.documentElement.clientHeight;
-		
-		var dpr = 1; 
-		if (window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
-		
-		document.write("&nbsp;La Risoluzione è di " + xres + "x" + yres + "<br>");
-		
-		document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
-		
-		document.write("&nbsp;DevicePixelRatio è di " + dpr);
-	</script>
+<script>	
+	var xres = screen.width;
+	var yres = +screen.height;
+	var xdpi = document.documentElement.clientWidth;
+	var ydpi = document.documentElement.clientHeight;
+	
+	var dpr = 1; 
+	if (window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
+	
+	document.write("&nbsp;La Risoluzione è di " + xres + "x" + yres + "<br>");
+	
+	document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
+	
+	document.write("&nbsp;DevicePixelRatio è di " + dpr);
+</script>
 	<img src="images/ruota-animata_320.gif" width="100%" style="margin-top: 50px;" />
 </div>
 </body>
