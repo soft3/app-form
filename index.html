@@ -16,7 +16,6 @@
 }
 </style>
 <script>
-/*
 function resizeGame() {
     var gameArea = document.getElementById('gameArea');
     var widthToHeight = 9 / 16;
@@ -41,7 +40,6 @@ function resizeGame() {
     gameCanvas.width = newWidth;
     gameCanvas.height = newHeight;
 }
-*/
 </script>
 <script>
 var img_obj = {
@@ -53,25 +51,40 @@ var img_obj = {
 };
 
 var img = new Image();
-img.onload = function () { // Triggered when image has finished loading.
-    img_obj.source = img;  // we set the image source for our object.
+img.onload = function () 
+{
+    img_obj.source = img;
 }
-img.src = 'images/sprite.png'; // contains an image of size 256x16
-                              // with 16 frames of size 16x16
+img.src = 'images/sprite.png';
 
-function draw_anim(context, x, y, iobj) { // context is the canvas 2d context.
+function draw_anim(context, x, y, iobj) 
+{
     if (iobj.source != null)
         context.drawImage(iobj.source, iobj.current * iobj.width, 0,
                           iobj.width, iobj.height,
                           x, y, iobj.width, iobj.height);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
-                   // incrementing the current frame and assuring animation loop
 }
 
-function on_body_load() {
+function on_body_load() 
+{
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
 
+    canvas.width = screen.width;
+    canvas.height = screen.height;
+
+    // create new image object to use as pattern
+    var bckg = new Image();
+	bckg.src = 'images/bg2.png';
+    bckg.onload = function()
+	{
+        // create pattern
+        var ptrn = context.createPattern(bckg, 'repeat'); 
+        context.fillStyle = ptrn;
+        context.fillRect(0,0,canvas.width, canvas.height);
+    };
+	
     setInterval((function (c, i) {
                 return function () {
                     draw_anim(c, 0, 0, i);
@@ -88,7 +101,7 @@ function on_body_load() {
 */
 </script>
 <div id="gameArea">
-  <canvas id="gameCanvas" style="border:1px solid #000000;" width='640' height='800'></canvas>
+  <canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="640"></canvas>
 </div>
 </body>
 </html>
