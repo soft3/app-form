@@ -33,8 +33,8 @@ function resizeGame() {
         gameArea.style.height = newHeight + 'px';
     }
     
-    gameArea.style.marginTop = (-newHeight / 2) + 'px';
-    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
+    gameArea.style.marginTop = 0; /*(-newHeight / 2) + 'px'; */
+    gameArea.style.marginLeft = 0; /*(-newWidth / 2) + 'px';*/
     
     var gameCanvas = document.getElementById('gameCanvas');
     gameCanvas.width = newWidth;
@@ -45,8 +45,8 @@ function resizeGame() {
 var img_obj = {
     'source': null,
     'current': 0,
-    'total_frames': 2,
-    'width': 640,
+    'total_frames': 6,
+    'width': 635,
     'height': 640,
 };
 
@@ -55,7 +55,7 @@ img.onload = function ()
 {
     img_obj.source = img;
 }
-img.src = 'images/sprite.png';
+img.src = 'images/animation.png';
 
 function draw_anim(context, x, y, iobj) 
 {
@@ -70,9 +70,6 @@ function on_body_load()
 {
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
-
-    canvas.width = screen.width;
-    canvas.height = screen.height;
 
     // create new image object to use as pattern
     var bckg = new Image();
@@ -93,7 +90,7 @@ function on_body_load()
 }
 </script>
 </head>
-<body onload="on_body_load()";>
+<body onload="on_body_load();">
 <script>
 /*
 	window.addEventListener('resize', resizeGame, false);
