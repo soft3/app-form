@@ -23,9 +23,14 @@
 		var xdpi = document.documentElement.clientWidth;
 		var ydpi = document.documentElement.clientHeight;
 		
+		var dpr = 1; 
+		if (window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
+		
 		document.write("&nbsp;La Risoluzione è di " + xres + "x" + yres + "<br>");
 		
-		document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi);
+		document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
+		
+		document.write("&nbsp;DevicePixelRaio è di " + dpr);
 	</script>
 	<img src="images/ruota-animata_640.gif" width="100%" style="margin-top: 50px;" />
 </div>
