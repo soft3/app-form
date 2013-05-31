@@ -5,21 +5,40 @@
 <title>Documento senza titolo</title>
 <link rel="stylesheet" type="text/css" href="css/canvas.css" />
 <script>
-function resizeGame() {
+var img_obj = {
+    'source': null,
+    'current': 0,
+    'total_frames': 6,
+    'width': 635,
+    'height': 640,
+};
+
+var img = new Image();
+img.onload = function ()
+{
+    img_obj.source = img;
+}
+img.src = 'images/animation.png';
+
+var bckg = new Image();
+bckg.src = 'images/bg2.png';
+	
+function resizeGame() 
+{
     var gameArea = document.getElementById('gameArea');
     var newWidth = window.innerWidth;
     var newHeight = window.innerHeight;
- 
+
     gameArea.style.width = newWidth + 'px';
     gameArea.style.height = newHeight + 'px';
-		
-    gameArea.style.marginTop = 0; 
-    gameArea.style.marginLeft = 0; 
-    
+
+    gameArea.style.marginTop = 0;
+    gameArea.style.marginLeft = 0;
+
     var gameCanvas = document.getElementById('gameCanvas');
     gameCanvas.width = newWidth;
     gameCanvas.height = newHeight;
-	
+
 	background();
 }
 
@@ -28,15 +47,32 @@ function background()
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
 
-    var bckg = new Image();
-	bckg.src = 'images/bg2.png';
-    bckg.onload = function()
-	{
-        // create pattern
-        var ptrn = context.createPattern(bckg, 'repeat');
-        context.fillStyle = ptrn;
-        context.fillRect(0,0,canvas.width, canvas.height);
-    };
+    var ptrn = context.createPattern(window.bckg, 'repeat');
+    context.fillStyle = ptrn;
+    context.fillRect(0,0,canvas.width, canvas.height);
+}
+
+function draw_anim(context, x, y, iobj)
+{
+	var canvas = document.getElementById('gameCanvas');
+	
+    if (iobj.source != null)
+        context.drawImage(iobj.source, iobj.current * iobj.width, 0,
+                          iobj.width, iobj.height,
+                          x, y, canvas.width, canvas.width);
+    iobj.current = (iobj.current + 1) % iobj.total_frames;
+}
+
+function serAnim()
+{
+    var canvas = document.getElementById('gameCanvas');
+    var context = canvas.getContext("2d");
+
+    setInterval((function (c, i) {
+                return function () {
+                    draw_anim(c, 2, 60, i);
+                };
+    })(context, img_obj), 100);
 }
 </script>
 </head>
@@ -47,8 +83,8 @@ function background()
 
 <script>
 	resizeGame();
-	background();
-	
+	serAnim();
+
 	window.addEventListener('resize', resizeGame, false);
 	window.addEventListener('orientationchange', resizeGame, false);
 </script>
