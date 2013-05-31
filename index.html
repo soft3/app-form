@@ -47,7 +47,7 @@ function background()
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
 
-    var ptrn = context.createPattern(window.bckg, 'repeat');
+    var ptrn = context.createPattern(bckg, 'repeat');
     context.fillStyle = ptrn;
     context.fillRect(0,0,canvas.width, canvas.height);
 }
@@ -83,7 +83,7 @@ function serAnim()
 
 <script>
 	resizeGame();
-	serAnim();
+	/*serAnim();*/
 
 	window.addEventListener('resize', resizeGame, false);
 	window.addEventListener('orientationchange', resizeGame, false);
