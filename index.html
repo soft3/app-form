@@ -60,9 +60,8 @@ function on_body_load()
     var context = canvas.getContext("2d");
 
 	//gameCanvas.height = document.documentElement.clientHeight;
-
 	//canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	//canvas.height = window.innerHeight;
 
     // create new image object to use as pattern
     var bckg = new Image();
@@ -102,11 +101,10 @@ function goFullScreen()
 */
 </script>
 
-<canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="1024"></canvas>
+<canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="960"></canvas>
 
-<p><button onclick="goFullScreen();">Go Fullscreen</button></p>
-	
 <script>
+/*
 	var xres = screen.width;
 	var yres = screen.height;
 	var xwin = window.innerWidth;
@@ -122,6 +120,7 @@ function goFullScreen()
 	document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
 
 	document.write("&nbsp;DevicePixelRatio è di " + dpr);
+*/
 </script>
 
 </body>
