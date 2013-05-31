@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento senza titolo</title>
+<link rel="stylesheet" type="text/css" href="css/canvas.css" />
+<script>
+var img_obj = {
+    'source': null,
+    'current': 0,
+    'total_frames': 6,
+    'width': 635,
+    'height': 640,
+};
+
+var img = new Image();
+img.onload = function ()
+{
+    img_obj.source = img;
+}
+img.src = 'images/animation.png';
+
+function draw_anim(context, x, y, iobj)
+{
+    if (iobj.source != null)
+        context.drawImage(iobj.source, iobj.current * iobj.width, 0,
+                          iobj.width, iobj.height,
+                          x, y, iobj.width, iobj.height);
+    iobj.current = (iobj.current + 1) % iobj.total_frames;
+}
+
+function resizeGame()
+{
+    var widthToHeight = 9 / 16;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
+	/*
+    var newWidthToHeight = newWidth / newHeight;
+
+    if (newWidthToHeight > widthToHeight) {
+        newWidth = newHeight * widthToHeight;
+    } else {
+        newHeight = newWidth / widthToHeight;
+    }
+    */
+    var gameCanvas = document.getElementById('gameCanvas');
+    gameCanvas.width = newWidth;
+    gameCanvas.height = newHeight;
+}
+
+function on_body_load()
+{
+    var canvas = document.getElementById('gameCanvas');
+    var context = canvas.getContext("2d");
+
+	//gameCanvas.height = document.documentElement.clientHeight;
+	//canvas.width = window.innerWidth;
+	//canvas.height = window.innerHeight;
+
+    // create new image object to use as pattern
+    var bckg = new Image();
+	bckg.src = 'images/bg2.png';
+    bckg.onload = function()
+	{
+        // create pattern
+        var ptrn = context.createPattern(bckg, 'repeat');
+        context.fillStyle = ptrn;
+        context.fillRect(0,0,canvas.width, canvas.height);
+    };
+
+    setInterval((function (c, i) {
+                return function () {
+                    draw_anim(c, 2, 60, i);
+                };
+    })(context, img_obj), 100);
+}
+
+function goFullScreen()
+{
+    var canvas = document.getElementById("gameCanvas");
+    if(canvas.requestFullScreen)
+        canvas.requestFullScreen();
+    else if(canvas.webkitRequestFullScreen)
+        canvas.webkitRequestFullScreen();
+    else if(canvas.mozRequestFullScreen)
+        canvas.mozRequestFullScreen();
+}
+</script>
+</head>
+<body onload="on_body_load();">
+<script>
+/*
+	window.addEventListener('resize', resizeGame, false);
+	window.addEventListener('orientationchange', resizeGame, false);
+*/
+</script>
+
+  <canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="640"></canvas>
+
+<script>
+/*
+	var xres = screen.width;
+	var yres = screen.height;
+	var xwin = window.innerWidth;
+	var ywin = window.innerHeight;
+	var xdpi = document.documentElement.clientWidth;
+	var ydpi = document.documentElement.clientHeight;
+
+	var dpr = 1;
+	if (window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
+
+	document.write("&nbsp;La Risoluzione è di " + xres + "x" + yres + "<br>");
+	document.write("&nbsp;La Finestra è di " + xwin + "x" + ywin+ "<br>");
+	document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
+
+	document.write("&nbsp;DevicePixelRatio è di " + dpr);
+*/
+</script>
+
+</body>
+</html>

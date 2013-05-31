@@ -1,0 +1,26 @@
+html{
+	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin:0;
+	color:#000;
+	width:100%;
+	height: 100%;
+}
+
+#gameArea {
+  position: absolute;
+  left:     0%;
+  top:      0%;
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+}
+
