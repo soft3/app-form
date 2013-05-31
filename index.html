@@ -81,6 +81,17 @@ function on_body_load()
                 };
     })(context, img_obj), 100);
 }
+
+function goFullScreen()
+{
+    var canvas = document.getElementById("gameCanvas");
+    if(canvas.requestFullScreen)
+        canvas.requestFullScreen();
+    else if(canvas.webkitRequestFullScreen)
+        canvas.webkitRequestFullScreen();
+    else if(canvas.mozRequestFullScreen)
+        canvas.mozRequestFullScreen();
+}
 </script>
 </head>
 <body onload="on_body_load();">
@@ -93,6 +104,8 @@ function on_body_load()
 
 <canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="1024"></canvas>
 
+<p><button onclick="goFullScreen();">Go Fullscreen</button></p>
+	
 <script>
 	var xres = screen.width;
 	var yres = screen.height;
@@ -110,5 +123,6 @@ function on_body_load()
 
 	document.write("&nbsp;DevicePixelRatio è di " + dpr);
 </script>
+
 </body>
 </html>
