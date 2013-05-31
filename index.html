@@ -100,10 +100,15 @@ function goFullScreen()
 	window.addEventListener('orientationchange', resizeGame, false);
 */
 </script>
-
+<!--
 <canvas id="gameCanvas" style="border:1px solid #000000;" width="640" height="960"></canvas>
+-->
 
 <script>
+	var xwin = window.innerWidth;
+	var ywin = window.innerHeight;
+	
+	document.write("<canvas id='gameCanvas' style='border:1px solid #000000;' width='640' height='" + ywin + "'></canvas>\n");
 /*
 	var xres = screen.width;
 	var yres = screen.height;
