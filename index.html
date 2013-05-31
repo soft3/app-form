@@ -58,8 +58,39 @@ function background()
 	context.fillText("DevicePixelRatio è di " + dpr, 10, 60);
 }
 
+var totFrames = 0;
+var frameInt = 25;
+
+if ( !window.requestAnimationFrame )
+{
+	window.requestAnimationFrame = ( function()
+	{
+		return window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element )
+		{
+			window.setTimeout( callback, frameInt );
+		};
+	} )();
+}
+
 function draw_anim(context, x, y, iobj)
 {
+	totFrames += 1;
+	if (totFrames > 150) frameInt = 50;
+	if (totFrames > 200) frameInt = 125;
+	if (totFrames > 250) frameInt = 312;
+	if (totFrames == 275)
+	{
+		totFrames = 0;
+		frameInt = 20;
+
+		if (screen.width <=320) window.location="index-320.html";
+		else window.location="index-640.html";
+	}
+
 	var canvas = document.getElementById('gameCanvas');
 
     if (iobj.source != null)
@@ -67,6 +98,14 @@ function draw_anim(context, x, y, iobj)
                           iobj.width, iobj.height,
                           x, y, canvas.width, canvas.width);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
+
+	context.clearRect(0, 60, 320, 15);
+	context.fillText("FrameInt " + frameInt + " totFrames " + totFrames, 10, 75);
+
+	setTimeout(function()
+	{
+		window.requestAnimationFrame(draw_anim(context, 2, 80, iobj));
+	}, frameInt);
 }
 
 function serAnim()
@@ -89,11 +128,15 @@ function serAnim()
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
 
+	/*
     setInterval((function (c, i) {
                 return function () {
                     draw_anim(c, 2, 60, i);
                 };
     })(context, img_obj), 100);
+	*/
+
+	draw_anim(context, 2, 60, img_obj);
 }
 </script>
 </head>
