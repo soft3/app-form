@@ -5,25 +5,7 @@
 <title>Documento senza titolo</title>
 <link rel="stylesheet" type="text/css" href="css/canvas.css" />
 <script>
-var img_obj = {
-    'source': null,
-    'current': 0,
-    'total_frames': 6,
-    'width': 635,
-    'height': 640,
-};
-
-var img = new Image();
-img.onload = function ()
-{
-    img_obj.source = img;
-}
-img.src = 'images/animation.png';
-
-var bckg = new Image();
-bckg.src = 'images/bg2.png';
-	
-function resizeGame() 
+function resizeGame()
 {
     var gameArea = document.getElementById('gameArea');
     var newWidth = window.innerWidth;
@@ -55,7 +37,7 @@ function background()
 function draw_anim(context, x, y, iobj)
 {
 	var canvas = document.getElementById('gameCanvas');
-	
+
     if (iobj.source != null)
         context.drawImage(iobj.source, iobj.current * iobj.width, 0,
                           iobj.width, iobj.height,
@@ -65,6 +47,21 @@ function draw_anim(context, x, y, iobj)
 
 function serAnim()
 {
+	var img_obj = {
+		'source': null,
+		'current': 0,
+		'total_frames': 6,
+		'width': 635,
+		'height': 640,
+	};
+
+	var img = new Image();
+	img.onload = function ()
+	{
+		img_obj.source = img;
+	}
+	img.src = 'images/animation.png';
+
     var canvas = document.getElementById('gameCanvas');
     var context = canvas.getContext("2d");
 
@@ -82,11 +79,16 @@ function serAnim()
 </div>
 
 <script>
+var bckg = new Image();
+bckg.src = 'images/bg2.png';
+bckg.onload = function()
+{
 	resizeGame();
-	/*serAnim();*/
+	serAnim();
 
 	window.addEventListener('resize', resizeGame, false);
 	window.addEventListener('orientationchange', resizeGame, false);
+}
 </script>
 
 </body>
