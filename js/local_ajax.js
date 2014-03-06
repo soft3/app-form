@@ -55,6 +55,7 @@ function pluto()
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible'
+	loader.scrollTop = 0;
 
 	$.ajax({
 		url: "http://www.youngo.it/json_test.php?callback=?",
@@ -79,6 +80,8 @@ function pluto()
 				'id': 'my-new-list',
 				html: items.join('')
 			}).prependTo('#risultato320');
+			var myDiv = document.getElementById('risultato320');
+			myDiv.scrollTop = 0;
 		},
 		error: function(x, t, m) {
 			if(t==="timeout") {

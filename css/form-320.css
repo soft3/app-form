@@ -49,6 +49,7 @@ textarea {
 	width: 320px; 
 	height: 1040px; 
 	background: url('../images/bg-320.png') no-repeat;
+	position:absolute;
 }
 
 #form320 {
