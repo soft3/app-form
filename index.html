@@ -5,18 +5,30 @@
 <title>Youngo</title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" charset="utf-8">
-function exitFromApp()
+function anyName(){
+    var varname=document.getElementsByClassName('body').offsetHeight - 20;
+    document.getElementById('istruzioni').style.height=varname+'px';
+}
+
+function continua()
 {
 	if (window.innerWidth <=320) window.location="index-320.html";
 	else window.location="index-640.html";
 }
 </script>
 </head>
-<body>
+<body onload='anyName()'>
 <div id="istruzioni">Benvenuto !<br /><br />
 Registrandoti con questa App riceverai in omaggio alcuni gettoni da utilizzare presso i nostri centri <strong>Youngo</strong> !<br /><br /> 
 Inoltre riceverai tutte le nostri promozioni!<br /><br /><br />
-<button class="vinci" name="buttonClick" onclick="exitFromApp()">Registrati e Vinci !</button>
+<button class="vinci" name="buttonClick" onclick="continua()">Registrati e Vinci !</button>
+<script>
+	var h1 = document.getElementById('istruzioni').clientHeight;
+	var h2 = document.getElementById('istruzioni').offsetHeight;
+	var h3 = document.getElementById('istruzioni').scrollHeight;
+	
+	document.write("<br /><br />&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + "<br />");
+</script>
 </div>
 </body>
 </html>
