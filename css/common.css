@@ -17,7 +17,7 @@ img { border:0 }
 input {
 	border: none;
 	background: url('../images/invia.png') no-repeat;
-	width: 117px;
+	width: 165px;
 	height: 36px;
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 }
@@ -85,10 +85,10 @@ fieldset {
 }
 
 #istruzioni {
-	font-size:20px;
-	color:#FFF;
+	font-size:22px;
+	color:#000066;
 	text-align:center;
-	text-shadow: 2px 2px 2px #000;
+	/*text-shadow: 2px 2px 2px #000;*/
 	padding-top:30px;
 	padding-left:10px;
 	padding-right:10px;
