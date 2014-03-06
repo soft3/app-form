@@ -39,6 +39,18 @@ textarea {
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 }
 
+#tutto320 {
+	width: 320px; 
+	height: 1040px; 
+	background: url('../images/bg-320.png') no-repeat;
+}
+
+#risultato320 {
+	width: 320px; 
+	height: 1040px; 
+	background: url('../images/bg-320.png') no-repeat;
+}
+
 #form320 {
 	text-align:center; 
 	color:#000066; 

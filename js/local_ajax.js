@@ -67,15 +67,18 @@ function pluto()
 		},
 		success: function(data)
 		{
-			alert("pippo !");
+			$('#tutto320').remove();
 			var items = [];
 			$.each(data, function(key, val) {
 				items.push('<li id="' + key + '">' + val + '</li>');
 			});
-			$('<ul/>', {
-				'class': 'my-new-list',
-				html: items.join('')
+			$('<div/>', {
+				'id': 'risultato320',
 			}).appendTo('body');
+			$('<ul/>', {
+				'id': 'my-new-list',
+				html: items.join('')
+			}).prependTo('#risultato320');
 		},
 		error: function(x, t, m) {
 			if(t==="timeout") {
@@ -102,7 +105,7 @@ function validate()
 		document.form1.cognome.focus();
 		return;
 	}
-
+/*
 	if (document.form1.telefono.value.length < 5)
 	{
 		alert("Errore: devi inserire il Telefono !");
@@ -134,9 +137,9 @@ function validate()
 		document.form1.nome_bambino_1.focus();
 		return;
 	}
-
+*/
 	/*----------*/
-
+/*
 	var data = new Date();
 	gg_act = data.getDate();
 	mm_act = data.getMonth() + 1;
@@ -189,15 +192,15 @@ function validate()
 			}
 		}
 	}
-
+*/
 	/*--------*/
-
+/*
 	if (document.form1.liberatoria.checked == false)
 	{
 		alert("Errore: devi accettare la Liberatoria !");
 		document.form1.liberatoria.focus();
 		return;
 	}
-
+*/
 	pluto();
 }
