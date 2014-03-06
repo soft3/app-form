@@ -67,6 +67,7 @@ function pluto()
 		},
 		success: function(data)
 		{
+			alert("pippo !");
 			var items = [];
 			$.each(data, function(key, val) {
 				items.push('<li id="' + key + '">' + val + '</li>');
@@ -109,6 +110,13 @@ function validate()
 		return;
 	}
 
+	if (document.form1.email.value.length < 5)
+	{
+		alert("Errore: devi inserire l'email !");
+		document.form1.email.focus();
+		return;
+	}
+
 	if (document.form1.email.value.length > 0)
 	{
 		var str=document.form1.email.value;
@@ -120,10 +128,10 @@ function validate()
 		}
 	}
 
-	if (document.form1.nome_festeggiato.value.length < 3)
+	if (document.form1.nome_bambino_1.value.length < 3)
 	{
-		alert("Errore: devi inserire il Nome del Festeggiato !");
-		document.form1.nome_festeggiato.focus();
+		alert("Errore: devi inserire il Nome del Bambino !");
+		document.form1.nome_bambino_1.focus();
 		return;
 	}
 
@@ -180,45 +188,6 @@ function validate()
 				return;
 			}
 		}
-	}
-	/*--------*/
-
-	if (document.form1.giorno.value == 0)
-	{
-		alert("Errore: devi selezionare il Giorno dell'Evento !");
-		document.form1.giorno.focus();
-		return;
-	}
-
-	if (document.form1.mese.value == 0)
-	{
-		alert("Errore: devi selezionare il Mese dell'Evento !");
-		document.form1.mese.focus();
-		return;
-	}
-
-	if (document.form1.mese.value < mm_act)
-	{
-		alert("Errore: la data dell'evento è nel passato !");
-		document.form1.mese.focus();
-		return;
-	}
-
-	if (document.form1.mese.value == mm_act)
-	{
-		if (document.form1.giorno.value < gg_act)
-		{
-			alert("Errore: la data dell'evento è nel passato !");
-			document.form1.giorno.focus();
-			return;
-		}
-	}
-
-	if (document.form1.ora.value == 0)
-	{
-		alert("Errore: devi selezionare l'Orario dell'Evento !");
-		document.form1.ora.focus();
-		return;
 	}
 
 	/*--------*/

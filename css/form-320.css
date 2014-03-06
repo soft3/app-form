@@ -11,7 +11,7 @@ body {
 .liberatoria {
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 	color: #000066;
-	margin-left: -15px;
+	/*margin-left: -15px;*/
 }
 form {
 	width: 300px;

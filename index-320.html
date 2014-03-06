@@ -68,13 +68,13 @@
     </label>
     <input type="text" name="telefono" class="telefono" value="" size="40" maxlength="42" required="required"/>
     <br />
-    <label>E-mail<br />
+    <label>E-mail *<br />
     </label>
-    <input type="text" name="email" class="email" value="" size="40" maxlength="42" pattern="^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$"/>
+    <input type="text" name="email" class="email" value="" size="40" maxlength="42" required="required" pattern="^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$"/>
     <br />
     <label>Nome Bambino 1*<br />
     </label>
-    <input type="text" name="nome_bambino_1" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <input type="text" name="nome_bambino_1" class="nome" value="" size="40" maxlength="42" required="required"/>
     <br />
     <label>Data di Nascita Bambino 1*<br />
     </label>
@@ -116,7 +116,7 @@
     <div style="height:8px;">&nbsp;</div>
     <label>Nome Bambino 2<br />
     </label>
-    <input type="text" name="nome_bambino_2" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <input type="text" name="nome_bambino_2" class="nome" value="" size="40" maxlength="42"/>
     <br />
     <label>Data di Nascita Bambino 2<br />
     </label>
@@ -158,7 +158,7 @@
     <div style="height:8px;">&nbsp;</div>
     <label>Nome Bambino 3<br />
     </label>
-    <input type="text" name="nome_bambino_3" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <input type="text" name="nome_bambino_3" class="nome" value="" size="40" maxlength="42"/>
     <br />
     <label>Data di Nascita Bambino 3<br />
     </label>
@@ -200,7 +200,7 @@
     <div style="height:8px;">&nbsp;</div>
     <label>Nome Bambino 4<br />
     </label>
-    <input type="text" name="nome_bambino_4" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <input type="text" name="nome_bambino_4" class="nome" value="" size="40" maxlength="42">
     <br />
     <label>Data di Nascita Bambino 4<br />
     </label>
@@ -240,7 +240,8 @@
 	  </script>	  
     </select>
     <div style="height:8px;">&nbsp;</div>
-	<label for="liberatoria"><span class="liberatoria">Liberatoria trattamento dati (Dlg 196/03)</span></label>
+	<label for="liberatoria"><span class="liberatoria"><b>Liberatoria trattamento dati (Dlg 196 del 30 Giugno 2003)</b></span></label>
+	<br />
 	<input type="checkbox" name="liberatoria" value="1" class="interesse"/>
     <br />
 	<div id="loader">
