@@ -6,6 +6,10 @@ html{
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 }
 
+body {
+  height: 100%;
+}
+
 img { border:0 }
 
 input {
@@ -49,6 +53,9 @@ input {
 	color: #FFF;
 	background: none;
 }
+.vinci {
+	font-size:20px;
+}
 
 fieldset {
 	border: none;
@@ -72,4 +79,16 @@ fieldset {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+}
+
+#istruzioni {
+	font-size:20px;
+	color:#ffffff;
+	text-align:center;
+	text-shadow: 1px 1px 1px #000;
+	padding-top:30px; 
+	padding-left:10px; 
+	padding-right:10px;
+	background: url('../images/text-960.png') no-repeat;
+	height:100%;
 }
