@@ -57,6 +57,7 @@ input {
 }
 .vinci {
 	font-size:20px;
+	padding: 5px 20px 5px 20px;
 }
 
 fieldset {
@@ -88,8 +89,8 @@ fieldset {
 	color:#ffffff;
 	text-align:center;
 	text-shadow: 2px 2px 2px #000;
-	padding-top:30px; 
-	padding-left:10px; 
+	padding-top:30px;
+	padding-left:10px;
 	padding-right:10px;
 	background: url('../images/text-960.png') no-repeat;
 	height:100%;
