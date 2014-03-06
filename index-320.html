@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>YOUNGO Contact Form</title>
+<title>YOUNGO Registration Form</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/form-320.css" />
@@ -15,29 +15,16 @@
 	});
 </script>
 <div style="width: 320px; height: 1040px; background: url('images/bg-320.png') no-repeat;">
-  <div style="text-align: center; padding-top: 5px;" class="Stile1">Vuoi prenotare la tua Festa presso il centro <b>YOUNGO Nola</b> ?<br />
-    Compila il form sottostante con i tuoi dati, sarai ricontattato al più presto dal nostro personale.
-  </div>
+  <div style="text-align: center; padding-top: 5px;" class="Stile1">Compila il form sottostante con i tuoi dati<br />
+  I dati contrassegnati con * sono obbligatori</div>
   <form name="form1" action="" method="post">
-    <label>Nome*<br />
+    <label>Nome Genitore*<br />
     </label>
     <input type="text" name="nome" class="nome" value="" size="40" maxlength="42" required="required" />
     <br />
-    <label>Cognome*<br />
+    <label>Cognome Genitore*<br />
     </label>
     <input type="text" name="cognome" class="nome" value="" size="40" maxlength="42"  required="required"/>
-    <br />
-    <label>Recapito Telefonico*<br />
-    </label>
-    <input type="text" name="telefono" class="telefono" value="" size="40" maxlength="42" required="required"/>
-    <br />
-    <label>E-mail<br />
-    </label>
-    <input type="text" name="email" class="email" value="" size="40" maxlength="42" pattern="^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$"/>
-    <br />
-    <label>Nome Festeggiato*<br />
-    </label>
-    <input type="text" name="nome_festeggiato" class="nome" value="" size="40" maxlength="42"  required="required"/>
     <br />
     <label>Data di Nascita*<br />
     </label>
@@ -118,87 +105,38 @@
       <option value="2013">2013</option>
     </select>
     <br />
-    <label>Data Evento*<br />
+    <label>Recapito Telefonico*<br />
     </label>
-    <select name="giorno" class="giorno">
-      <option value="0" selected="selected">Giorno</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-      <option value="26">26</option>
-      <option value="27">27</option>
-      <option value="28">28</option>
-      <option value="29">29</option>
-      <option value="30">30</option>
-      <option value="31">31</option>
-    </select>
-    <select name="mese" class="mese">
-      <option value="0" selected="selected">Mese</option>
-      <option value="1">Gennaio</option>
-      <option value="2">Febbraio</option>
-      <option value="3">Marzo</option>
-      <option value="4">Aprile</option>
-      <option value="5">Maggio</option>
-      <option value="6">Giugno</option>
-      <option value="7">Luglio</option>
-      <option value="8">Agosto</option>
-      <option value="9">Settembre</option>
-      <option value="10">Ottobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Dicembre</option>
-    </select>
-    <select name="ora" class="ora">
-      <option value="0" selected="selected">Ora</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-    </select>
+    <input type="text" name="telefono" class="telefono" value="" size="40" maxlength="42" required="required"/>
     <br />
-    <label>Potrebbe Interessarti<br /></label><span class="Stile1" >
-    <input name="interesse1" type="checkbox" class="interesse" value="Animazione" />Animazione<br />
-    <input name="interesse2" type="checkbox" class="interesse" value="Mascotte" />Mascotte<br />
-    <input name="interesse3" type="checkbox" class="interesse" value="Trucca Bimbi" />Trucca Bimbi<br />
-    <input name="interesse4" type="checkbox" class="interesse" value="Foto Evento su CD" />Foto Evento su CD<br />
-    <input name="interesse5" type="checkbox" class="interesse" value="Stampa Foto Evento" />Stampa Foto Evento<br />
-    <input name="interesse6" type="checkbox" class="interesse" value="Festa a Tema" />Festa a Tema<br />
-    <input name="interesse7" type="checkbox" class="interesse" value="Torta Personalizzata" />Torta Personalizzata<br />
-	</span>
-    <label for="descrizione" style="margin-left: -10px;">Ulteriori Commenti</label>
+    <label>E-mail<br />
+    </label>
+    <input type="text" name="email" class="email" value="" size="40" maxlength="42" pattern="^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$"/>
     <br />
-    <textarea name="descrizione" rows="0" cols="0"></textarea>
+    <label>Nome Bambino 1*<br />
+    </label>
+    <input type="text" name="nome_bambino_1" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <br />
+    <label>Nome Bambino 2<br />
+    </label>
+    <input type="text" name="nome_bambino_2" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <br />
+    <label>Nome Bambino 3<br />
+    </label>
+    <input type="text" name="nome_bambino_3" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <br />
+    <label>Nome Bambino 4<br />
+    </label>
+    <input type="text" name="nome_bambino_4" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <br />
+    <label>Nome Bambino 5<br />
+    </label>
+    <input type="text" name="nome_bambino_5" class="nome" value="" size="40" maxlength="42"  required="required"/>
+    <br />
     <br />
 	<label for="liberatoria"><span class="Stile1" style="margin-left: -10px;">Liberatoria trattamento dati (Dlg 196/03)</span></label>
 	<input type="checkbox" name="liberatoria" value="1" class="interesse"/>
+    <br />
 	<div id="loader">
 	    <img src="images/ajax-loader.gif"/>
 	</div>
