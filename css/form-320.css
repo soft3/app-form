@@ -1,3 +1,4 @@
+/*
 body {
 	font: 14px normal Verdana, Arial, Helvetica, sans-serif;
 	margin:0;
@@ -6,10 +7,11 @@ body {
 	height: 1040px;
 	position:relative;
 }
-
-.Stile1 {
-	font: 15px normal Verdana, Arial, Helvetica, sans-serif;
-	color: #FFF;
+*/
+.liberatoria {
+	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #000066;
+	margin-left: -15px;
 }
 form {
 	width: 300px;
@@ -19,9 +21,9 @@ form {
 
 label {
 	width: 310px;
-	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
-	color:#FFF; 
-	text-shadow: 2px 2px 1px #000;	
+	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
+	color:#000066; 
+	/*text-shadow: 2px 2px 1px #000;	*/
 }
 
 textarea {
@@ -35,6 +37,14 @@ textarea {
 	padding-right: 4px;
 	margin-left: -10px;
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+}
+
+#form320 {
+	text-align:center; 
+	color:#000066; 
+	font-size: 16px;
+	/*text-shadow: 2px 2px 1px #000;*/
+	padding-bottom: 10px; 
 }
 
 #user-details {
