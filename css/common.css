@@ -3,7 +3,7 @@ html{
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+	font: 15px normal Verdana, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -19,7 +19,7 @@ input {
 	background: url('../images/invia.png') no-repeat;
 	width: 117px;
 	height: 36px;
-	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
+	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
 }
 .nome {
 	border: none;
@@ -86,7 +86,7 @@ fieldset {
 
 #istruzioni {
 	font-size:20px;
-	color:#ffffff;
+	color:#FFF;
 	text-align:center;
 	text-shadow: 2px 2px 2px #000;
 	padding-top:30px;
@@ -94,4 +94,10 @@ fieldset {
 	padding-right:10px;
 	background: url('../images/text-960.png') no-repeat;
 	height:100%;
+}
+#form320 {
+	text-align:center; 
+	color:#FFF; 
+	text-shadow: 2px 2px 1px #000;
+	padding-bottom: 10px; 
 }

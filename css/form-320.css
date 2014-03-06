@@ -19,8 +19,9 @@ form {
 
 label {
 	width: 310px;
-	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
-	color: #FFF;
+	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
+	color:#FFF; 
+	text-shadow: 2px 2px 1px #000;	
 }
 
 textarea {
