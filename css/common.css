@@ -93,6 +93,10 @@ fieldset {
 	padding-top:30px;
 	padding-left:10px;
 	padding-right:10px;
-	background: url('../images/text-960.png') no-repeat;
+	background: url('../images/text-960.png') no-repeat no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 	height:100%;
 }
