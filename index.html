@@ -6,8 +6,16 @@
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" charset="utf-8">
 function anyName(){
-    var varname=document.getElementsByClassName('body').offsetHeight - 20;
-    document.getElementById('istruzioni').style.height=varname+'px';
+    var varname=Math.max(
+        document.documentElement.clientHeight,
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+    );
+
+	alert (window.innerHeight);
+    document.getElementById('istruzioni').style.height=window.innerHeight + 'px';
 }
 
 function continua()
@@ -19,15 +27,16 @@ function continua()
 </head>
 <body onload='anyName()'>
 <div id="istruzioni">Benvenuto !<br /><br />
-Registrandoti con questa App riceverai in omaggio alcuni gettoni da utilizzare presso i nostri centri <strong>Youngo</strong> !<br /><br /> 
+Registrandoti con questa App riceverai in omaggio alcuni gettoni da utilizzare presso i nostri centri <strong>Youngo</strong> !<br /><br />
 Inoltre riceverai tutte le nostri promozioni!<br /><br /><br />
 <button class="vinci" name="buttonClick" onclick="continua()">Registrati e Vinci !</button>
 <script>
 	var h1 = document.getElementById('istruzioni').clientHeight;
 	var h2 = document.getElementById('istruzioni').offsetHeight;
 	var h3 = document.getElementById('istruzioni').scrollHeight;
-	
-	document.write("<br /><br />&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + "<br />");
+	var h4 = window.innerHeight;
+
+	document.write("<br /><br />&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + " " + h4 + "<br />");
 </script>
 </div>
 </body>
