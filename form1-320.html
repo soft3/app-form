@@ -17,7 +17,7 @@
 <div id="tutto320">
   <div id="form320">Compila il form sottostante con i tuoi dati<br />
   I campi contrassegnati con * sono obbligatori</div>
-  <form name="form1" action="" method="post">
+  <form id="form1" name="form1" action="" method="post" onsubmit="return false">
     <label>Nome Genitore*<br />
     </label>
     <input type="text" name="nome" class="nome" value="" size="40" maxlength="42" required="required" />
@@ -103,132 +103,6 @@
       <option value="12">Dicembre</option>
     </select>
     <select name="anno_nascita_b1" class="ora">
-      <option value="0" selected="selected">Anno</option>
-	  <script>
-		var d = new Date();
-		var anno = d.getFullYear();
-		for (ii=1990;ii<=anno;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	  </script>	  
-    </select>
-    <div style="height:8px;">&nbsp;</div>
-    <label>Nome Bambino 2<br />
-    </label>
-    <input type="text" name="nome_bambino_2" class="nome" value="" size="40" maxlength="42"/>
-    <br />
-    <label>Data di Nascita Bambino 2<br />
-    </label>
-	<select name="giorno_nascita_b2" class="giorno">
-      <option value="0" selected="selected">Giorno</option>
-	<script>
-		for (ii=1;ii<=31;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	</script>
-    </select>
-    <select name="mese_nascita_b2" class="mese">
-      <option value="0" selected="selected">Mese</option>
-      <option value="1">Gennaio</option>
-      <option value="2">Febbraio</option>
-      <option value="3">Marzo</option>
-      <option value="4">Aprile</option>
-      <option value="5">Maggio</option>
-      <option value="6">Giugno</option>
-      <option value="7">Luglio</option>
-      <option value="8">Agosto</option>
-      <option value="9">Settembre</option>
-      <option value="10">Ottobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Dicembre</option>
-    </select>
-    <select name="anno_nascita_b2" class="ora">
-      <option value="0" selected="selected">Anno</option>
-	  <script>
-		var d = new Date();
-		var anno = d.getFullYear();
-		for (ii=1990;ii<=anno;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	  </script>	  
-    </select>
-    <div style="height:8px;">&nbsp;</div>
-    <label>Nome Bambino 3<br />
-    </label>
-    <input type="text" name="nome_bambino_3" class="nome" value="" size="40" maxlength="42"/>
-    <br />
-    <label>Data di Nascita Bambino 3<br />
-    </label>
-	<select name="giorno_nascita_b3" class="giorno">
-      <option value="0" selected="selected">Giorno</option>
-	<script>
-		for (ii=1;ii<=31;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	</script>
-    </select>
-    <select name="mese_nascita_b3" class="mese">
-      <option value="0" selected="selected">Mese</option>
-      <option value="1">Gennaio</option>
-      <option value="2">Febbraio</option>
-      <option value="3">Marzo</option>
-      <option value="4">Aprile</option>
-      <option value="5">Maggio</option>
-      <option value="6">Giugno</option>
-      <option value="7">Luglio</option>
-      <option value="8">Agosto</option>
-      <option value="9">Settembre</option>
-      <option value="10">Ottobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Dicembre</option>
-    </select>
-    <select name="anno_nascita_b3" class="ora">
-      <option value="0" selected="selected">Anno</option>
-	  <script>
-		var d = new Date();
-		var anno = d.getFullYear();
-		for (ii=1990;ii<=anno;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	  </script>	  
-    </select>
-    <div style="height:8px;">&nbsp;</div>
-    <label>Nome Bambino 4<br />
-    </label>
-    <input type="text" name="nome_bambino_4" class="nome" value="" size="40" maxlength="42">
-    <br />
-    <label>Data di Nascita Bambino 4<br />
-    </label>
-	<select name="giorno_nascita_b4" class="giorno">
-      <option value="0" selected="selected">Giorno</option>
-	<script>
-		for (ii=1;ii<=31;ii++)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
-	</script>
-    </select>
-    <select name="mese_nascita_b4" class="mese">
-      <option value="0" selected="selected">Mese</option>
-      <option value="1">Gennaio</option>
-      <option value="2">Febbraio</option>
-      <option value="3">Marzo</option>
-      <option value="4">Aprile</option>
-      <option value="5">Maggio</option>
-      <option value="6">Giugno</option>
-      <option value="7">Luglio</option>
-      <option value="8">Agosto</option>
-      <option value="9">Settembre</option>
-      <option value="10">Ottobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Dicembre</option>
-    </select>
-    <select name="anno_nascita_b4" class="ora">
       <option value="0" selected="selected">Anno</option>
 	  <script>
 		var d = new Date();

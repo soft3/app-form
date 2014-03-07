@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>YOUNGO Registration Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/form-320.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/local_ajax.js"></script>
+<script>
+function dopo() {
+	param_name=new Array();
+	param_value=new Array();
+
+	indirizzo=unescape(String(this.location));
+	params=indirizzo.split("?");
+	param=params[1].split("&");
+
+	for(i=0;i<param.length;i++) {
+		param_temp=param[i].split("=");
+		param_name[i]=param_temp[0];
+		param_value[i]=param_temp[1];
+
+		if(isNaN(param_value[i])) eval("var "+param_name[i]+"='"+param_value[i]+"';");
+		else eval("var "+param[i]+";");
+	}
+
+    //Create an input type dynamically.
+    var element = document.createElement("input");
+
+    //Assign different attributes to the element.
+    element.setAttribute("type", "hidden");
+    element.setAttribute("value", id);
+    element.setAttribute("name", "id");
+
+    var foo = document.getElementById("foobar");
+
+    //Append the element in page (in span).
+    foo.appendChild(element);
+}
+</script>
+</head>
+<body onload="dopo();">
+<script>
+	$(document).ajaxError(function(event, request, settings, thrownError) {
+		alert( "Triggered ajaxError handler.\n" + settings.toSource() );
+	});
+</script>
+<div id="tutto320">
+  <div id="form320">Compila il form sottostante con i tuoi dati<br />
+  I campi seguenti sono opzionali</div>
+  <form id="form2" name="form2" action="" method="post">
+    <label>Nome Bambino 2<br />
+    </label>
+    <input type="text" name="nome_b2" class="nome" value="" size="40" maxlength="42" id="nome_b2"/>
+    <br />
+    <label>Data di Nascita Bambino 2<br />
+    </label>
+	<select name="giorno_b2" class="giorno" id="giorno_b2">
+      <option value="0" selected="selected">Giorno</option>
+	<script>
+		for (ii=1;ii<=31;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	</script>
+    </select>
+    <select name="mese_b2" class="mese" id="mese_b2">
+      <option value="0" selected="selected">Mese</option>
+      <option value="1">Gennaio</option>
+      <option value="2">Febbraio</option>
+      <option value="3">Marzo</option>
+      <option value="4">Aprile</option>
+      <option value="5">Maggio</option>
+      <option value="6">Giugno</option>
+      <option value="7">Luglio</option>
+      <option value="8">Agosto</option>
+      <option value="9">Settembre</option>
+      <option value="10">Ottobre</option>
+      <option value="11">Novembre</option>
+      <option value="12">Dicembre</option>
+    </select>
+    <select name="anno_b2" class="ora" id="anno_b2">
+      <option value="0" selected="selected">Anno</option>
+	  <script>
+		var d = new Date();
+		var anno = d.getFullYear();
+		for (ii=1990;ii<=anno;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	  </script>
+    </select>
+    <div style="height:8px;">&nbsp;</div>
+    <label>Nome Bambino 3<br />
+    </label>
+    <input type="text" name="nome_b3" class="nome" value="" size="40" maxlength="42" id="nome_b3"/>
+    <br />
+    <label>Data di Nascita Bambino 3<br />
+    </label>
+	<select name="giorno_b3" class="giorno" id="giorno_b3">
+      <option value="0" selected="selected">Giorno</option>
+	<script>
+		for (ii=1;ii<=31;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	</script>
+    </select>
+    <select name="mese_b3" class="mese" id="mese_b3">
+      <option value="0" selected="selected">Mese</option>
+      <option value="1">Gennaio</option>
+      <option value="2">Febbraio</option>
+      <option value="3">Marzo</option>
+      <option value="4">Aprile</option>
+      <option value="5">Maggio</option>
+      <option value="6">Giugno</option>
+      <option value="7">Luglio</option>
+      <option value="8">Agosto</option>
+      <option value="9">Settembre</option>
+      <option value="10">Ottobre</option>
+      <option value="11">Novembre</option>
+      <option value="12">Dicembre</option>
+    </select>
+    <select name="anno_b3" class="ora" id="anno_b3">
+      <option value="0" selected="selected">Anno</option>
+	  <script>
+		var d = new Date();
+		var anno = d.getFullYear();
+		for (ii=1990;ii<=anno;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	  </script>
+    </select>
+    <div style="height:8px;">&nbsp;</div>
+    <label>Nome Bambino 4<br />
+    </label>
+    <input type="text" name="nome_b4" class="nome" value="" size="40" maxlength="42" id="nome_b4">
+    <br />
+    <label>Data di Nascita Bambino 4<br />
+    </label>
+	<select name="giorno_b4" class="giorno" id="giorno_b4">
+      <option value="0" selected="selected">Giorno</option>
+	<script>
+		for (ii=1;ii<=31;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	</script>
+    </select>
+    <select name="mese_b4" class="mese" id="mese_b4">
+      <option value="0" selected="selected">Mese</option>
+      <option value="1">Gennaio</option>
+      <option value="2">Febbraio</option>
+      <option value="3">Marzo</option>
+      <option value="4">Aprile</option>
+      <option value="5">Maggio</option>
+      <option value="6">Giugno</option>
+      <option value="7">Luglio</option>
+      <option value="8">Agosto</option>
+      <option value="9">Settembre</option>
+      <option value="10">Ottobre</option>
+      <option value="11">Novembre</option>
+      <option value="12">Dicembre</option>
+    </select>
+    <select name="anno_b4" class="ora" id="anno_b4">
+      <option value="0" selected="selected">Anno</option>
+	  <script>
+		var d = new Date();
+		var anno = d.getFullYear();
+		for (ii=1990;ii<=anno;ii++)
+		{
+			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+		}
+	  </script>
+    </select>
+    <div style="height:8px;">&nbsp;</div>
+	<div id="loader">
+	    <img src="images/ajax-loader.gif"/>
+	</div>
+	<div align="right" style="margin-top: 8px;">
+		<input type="button" name="button" value="" onclick="pluto2();" />&nbsp;&nbsp;
+	</div>
+	<span id="foobar">&nbsp;</span>
+  </form>
+</div>
+</body>
+</html>

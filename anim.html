@@ -60,6 +60,8 @@ function background()
 
 var totFrames = 0;
 var frameInt = 25;
+var stepFrame = 150;
+var finalFrame = 200;
 
 if ( !window.requestAnimationFrame )
 {
@@ -79,16 +81,15 @@ if ( !window.requestAnimationFrame )
 function draw_anim(context, x, y, iobj)
 {
 	totFrames += 1;
-	if (totFrames > 150) frameInt = 50;
-	if (totFrames > 200) frameInt = 125;
-	if (totFrames > 250) frameInt = 312;
-	if (totFrames == 275)
+	if (totFrames > 100) frameInt = 50;
+	if (totFrames > stepFrame) frameInt = 125 + (totFrames - stepFrame) * 3;
+	if (totFrames == finalFrame)
 	{
 		totFrames = 0;
-		frameInt = 20;
+		frameInt = 25;
 
-		if (screen.width <=320) window.location="index-320.html";
-		else window.location="index-640.html";
+		if (window.innerWidth <=320) window.location="vinto-320.html";
+		else window.location="vinto-640.html";
 	}
 
 	var canvas = document.getElementById('gameCanvas');

@@ -1,50 +1,4 @@
-/*
-$(document).ready(function(){
-	$.getJSON("http://www.youngo.it/json_test.php?tags=oppo&callback=?", function(data){
-		var items = [];
-		$.each(data, function(key, val) {
-			items.push('<li id="' + key + '">' + val + '</li>');
-		});
-		$('<ul/>', {
-			'class': 'my-new-list',
-			html: items.join('')
-		}).appendTo('body');
-	});
-});
-*/
-
-function pappo(data)
-{
-	var items = [];
-	$.each(data, function(key, val) {
-		items.push('<li id="' + key + '">' + val + '</li>');
-	});
-	$('<ul/>', {
-		'class': 'my-new-list',
-		html: items.join('')
-	}).appendTo('body');
-}
-
-function pluto_old()
-{
-	var contatto = new Object();
-
-	contatto.nome = document.form1.nome.value;
-	contatto.cognome = document.form1.cognome.value;
-
-	$.getJSON( "http://www.youngo.it/json_test.php?callback=?", contatto,function(data)
-		{
-			var items = [];
-			$.each(data, function(key, val) {
-				items.push('<li id="' + key + '">' + val + '</li>');
-			});
-			$('<ul/>', {
-				'class': 'my-new-list',
-				html: items.join('')
-			}).appendTo('body');
-		}
-	);
-}
+/* questa funzione salva i dati obbligatori nel DB e ritorna l'id del record salvato */
 
 function pluto()
 {
@@ -68,6 +22,47 @@ function pluto()
 		},
 		success: function(data)
 		{
+			window.scrollTo( 0, 0 );
+			window.location="form2-320.html?id="+data.id;
+		},
+		error: function(x, t, m) {
+			if(t==="timeout") {
+				alert("Nessuna risposta dal Server!\nControllare l'accesso ad Internet e riprovare più tardi, grazie!");
+			} else {
+				alert(t);
+			}
+		}
+	});
+}
+
+function pluto2()
+{
+	var contatto = new Object();
+
+	contatto.nome_b2 = document.form2.nome_b2.value;
+	contatto.nascita_b2 = document.form2.anno_b2.value + "/" + document.form2.mese_b2.value + "/" + document.form2.giorno_b2.value;
+	contatto.nome_b3 = document.form2.nome_b3.value;
+	contatto.nascita_b3 = document.form2.anno_b3.value + "/" + document.form2.mese_b3.value + "/" + document.form2.giorno_b3.value;
+	contatto.nome_b4 = document.form2.nome_b4.value;
+	contatto.nascita_b4 = document.form2.anno_b4.value + "/" + document.form2.mese_b4.value + "/" + document.form2.giorno_b4.value;
+
+	contatto.id = document.form2.id.value;
+
+	var loader = document.getElementById('loader');
+	loader.style.visibility = 'visible';
+	window.scrollTo( 0, 0 );
+
+	$.ajax({
+		url: "http://www.youngo.it/json_update.php?callback=?",
+		type: "GET",
+		dataType: "json",
+		data: contatto,
+		timeout: 10000,
+		complete: function(){
+			loader.style.visibility = 'hidden'
+		},
+		success: function(data)
+		{
 			$('#tutto320').remove();
 			var items = [];
 			$.each(data, function(key, val) {
@@ -81,6 +76,8 @@ function pluto()
 				html: items.join('')
 			}).prependTo('#risultato320');
 			window.scrollTo( 0, 0 );
+			
+			setTimeout(function(){window.location="anim.html"},5000);
 		},
 		error: function(x, t, m) {
 			if(t==="timeout") {
