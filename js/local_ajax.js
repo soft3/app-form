@@ -6,17 +6,23 @@ function pluto()
 
 	contatto.nome = document.form1.nome.value;
 	contatto.cognome = document.form1.cognome.value;
+	contatto.data_nascita = document.form1.anno_nascita.value + "/" + document.form1.mese_nascita.value + "/" + document.form1.giorno_nascita.value;
+	contatto.email = document.form1.email.value;
+	contatto.telefono = document.form1.telefono.value;
+	contatto.nome_b1 = document.form1.nome_b1.value;
+	contatto.nascita_b1 = document.form1.anno_b1.value + "/" + document.form1.mese_b1.value + "/" + document.form1.giorno_b1.value;
+	contatto.liberatoria = document.form1.liberatoria.checked;
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible';
 	window.scrollTo( 0, 0 );
 
 	$.ajax({
-		url: "http://www.youngo.it/json_test.php?callback=?",
+		url: "http://www.youngo.it/json_insert.php?callback=?",
 		type: "GET",
 		dataType: "json",
 		data: contatto,
-		timeout: 10000,
+		timeout: 15000,
 		complete: function(){
 			loader.style.visibility = 'hidden'
 		},
@@ -39,14 +45,13 @@ function pluto2()
 {
 	var contatto = new Object();
 
+	contatto.id = document.form2.id.value;
 	contatto.nome_b2 = document.form2.nome_b2.value;
 	contatto.nascita_b2 = document.form2.anno_b2.value + "/" + document.form2.mese_b2.value + "/" + document.form2.giorno_b2.value;
 	contatto.nome_b3 = document.form2.nome_b3.value;
 	contatto.nascita_b3 = document.form2.anno_b3.value + "/" + document.form2.mese_b3.value + "/" + document.form2.giorno_b3.value;
 	contatto.nome_b4 = document.form2.nome_b4.value;
 	contatto.nascita_b4 = document.form2.anno_b4.value + "/" + document.form2.mese_b4.value + "/" + document.form2.giorno_b4.value;
-
-	contatto.id = document.form2.id.value;
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible';
@@ -57,7 +62,7 @@ function pluto2()
 		type: "GET",
 		dataType: "json",
 		data: contatto,
-		timeout: 10000,
+		timeout: 15000,
 		complete: function(){
 			loader.style.visibility = 'hidden'
 		},
@@ -76,7 +81,7 @@ function pluto2()
 				html: items.join('')
 			}).prependTo('#risultato320');
 			window.scrollTo( 0, 0 );
-			
+
 			setTimeout(function(){window.location="anim.html"},5000);
 		},
 		error: function(x, t, m) {
@@ -138,7 +143,7 @@ function validate()
 	}
 */
 	/*----------*/
-/*
+
 	var data = new Date();
 	gg_act = data.getDate();
 	mm_act = data.getMonth() + 1;
@@ -191,15 +196,15 @@ function validate()
 			}
 		}
 	}
-*/
+
 	/*--------*/
-/*
+
 	if (document.form1.liberatoria.checked == false)
 	{
 		alert("Errore: devi accettare la Liberatoria !");
 		document.form1.liberatoria.focus();
 		return;
 	}
-*/
+
 	pluto();
 }
