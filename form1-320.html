@@ -13,6 +13,24 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
+
+	var deviceos  = device.platform  ;  //fetch the device operating system
+	var deviceosversion = device.version ;  //fetch the device OS version
+	
+	//Create an input type dynamically.
+    var element = document.createElement("input");
+    element.setAttribute("type", "hidden");
+    element.setAttribute("value", deviceos);
+    element.setAttribute("name", "deviceos");
+    var foo = document.getElementById("dos");
+    foo.appendChild(element);
+
+    element = document.createElement("input");
+    element.setAttribute("type", "hidden");
+    element.setAttribute("value", deviceosversion);
+    element.setAttribute("name", "deviceosversion");
+    foo = document.getElementById("dosv");
+    foo.appendChild(element);
 }
 
 function onBackKeyDown() {
@@ -135,6 +153,8 @@ function onBackKeyDown() {
 	<div align="right" style="margin-top: 8px;">
 		<input type="button" name="button" value="" onclick="validate();" />&nbsp;&nbsp;
 	</div>
+	<span id="dos">&nbsp;</span>
+	<span id="dosv">&nbsp;</span>
   </form>
 </div>
 </body>

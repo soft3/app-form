@@ -12,6 +12,8 @@ function pluto()
 	contatto.nome_b1 = document.form1.nome_b1.value;
 	contatto.nascita_b1 = document.form1.anno_b1.value + "/" + document.form1.mese_b1.value + "/" + document.form1.giorno_b1.value;
 	contatto.liberatoria = document.form1.liberatoria.checked;
+	contatto.deviceos = document.form1.deviceos.value;
+	contatto.deviceosversion = document.form1.deviceosversion.value;
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible';
