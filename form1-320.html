@@ -15,42 +15,14 @@ function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-	var deviceos = device.platform;
-	var deviceosversion = device.version;
-	var uuid = device.uuid;
-	/*
-    var element = document.createElement("input");
-    element.setAttribute("type", "hidden");
-    element.setAttribute("value", deviceos);
-    element.setAttribute("name", "deviceos");
-    var foo = document.getElementById("dos");
-    foo.appendChild(element);
-
-    element = document.createElement("input");
-    element.setAttribute("type", "hidden");
-    element.setAttribute("value", deviceosversion);
-    element.setAttribute("name", "deviceosversion");
-    foo = document.getElementById("dosv");
-    foo.appendChild(element);
-
-    element = document.createElement("input");
-    element.setAttribute("type", "hidden");
-    element.setAttribute("value", uuid);
-    element.setAttribute("name", "uuid");
-    foo = document.getElementById("duuid");
-    foo.appendChild(element);	
-	*/
-	document.getElementById("deviceos").value = deviceos;
-	document.getElementById("deviceosversion").value = deviceosversion;
-	document.getElementById("uuid").value = uuid;
+	document.getElementById("deviceos").value = device.platform;
+	document.getElementById("deviceosversion").value = device.version;
+	document.getElementById("uuid").value = device.uuid;
 }
 
 function onSuccess(position) {
-	var lati = position.coords.latitude;
-	var longi = position.coords.longitude;
-	
-    document.getElementById('lati').value = lati;
-	document.getElementById('longi').value = longi;
+    document.getElementById('lati').value = position.coords.latitude;
+	document.getElementById('longi').value = position.coords.longitude;
 }
 
 function onError(error) {
@@ -109,7 +81,7 @@ function onBackKeyDown() {
 	  <script>
 		var d = new Date();
 		var anno = d.getFullYear();
-		for (ii=1900;ii<=anno;ii++)
+		for (ii=anno;ii>=(anno-114);ii--)
 		{
 			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
 		}
@@ -159,11 +131,11 @@ function onBackKeyDown() {
 	  <script>
 		var d = new Date();
 		var anno = d.getFullYear();
-		for (ii=1990;ii<=anno;ii++)
+		for (ii=anno;ii>=(anno-24);ii--)
 		{
 			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
 		}
-	  </script>	  
+	  </script>
     </select>
     <div style="height:8px;">&nbsp;</div>
 	<label for="liberatoria"><span class="liberatoria"><b>Liberatoria trattamento dati (Dlg 196 del 30 Giugno 2003)</b></span></label>
@@ -179,13 +151,8 @@ function onBackKeyDown() {
 	<input type="hidden" name="deviceos" id="deviceos" value="0">
 	<input type="hidden" name="deviceosversion" id="deviceosversion" value="0">
 	<input type="hidden" name="uuid" id="uuid" value="0">
-	<input type="hidden" name="lati" id="lati" value="41.70920">
-	<input type="hidden" name="longi" id="longi" value="12.62574">
-	<!---
-	<span id="dos">&nbsp;</span>
-	<span id="dosv">&nbsp;</span>
-	<span id="duuid">&nbsp;</span>
-	-->
+	<input type="hidden" name="lati" id="lati" value="0">
+	<input type="hidden" name="longi" id="longi" value="0">
   </form>
 </div>
 </body>

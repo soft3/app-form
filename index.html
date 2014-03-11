@@ -10,21 +10,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 function onBackKeyDown() {
     return false;
-}
-
-function onSuccess(position) {
-	var element = document.getElementById('geolocation');
-	element.innerHTML = 'Latitude: '  + position.coords.latitude  + '<br />' +
-						'Longitude: ' + position.coords.longitude + '<br />';
-}
-
-function onError(error) {
-	return false;
 }
 </script>
 <script type="text/javascript">
@@ -46,6 +35,7 @@ function continua()
   <br /><br />
   <span style="font-size:14px;">(assicurati di avere la connessione ad internet attiva)</span>
   <script>
+  /*
 	var h1 = document.getElementById('istruzioni').clientHeight;
 	var h2 = document.getElementById('istruzioni').offsetHeight;
 	var h3 = document.getElementById('istruzioni').scrollHeight;
@@ -54,8 +44,8 @@ function continua()
 	document.write("<br /><br />");
 	document.write("<span style=\"font-size:14px;\">");
 	document.write("&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + " " + h4 + "</span>");
+  */
   </script>
-  <p id="geolocation"><span style="font-size:14px">Loading device geolocation...</span></p>
 </div>
 </body>
 </html>

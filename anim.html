@@ -20,8 +20,10 @@ function onBackKeyDown() {
 function resizeGame()
 {
     var gameArea = document.getElementById('gameArea');
-    var newWidth = document.documentElement.clientWidth; //window.innerWidth;
-    var newHeight = document.documentElement.clientHeight; //window.innerHeight;
+    var newWidth = document.documentElement.clientWidth;
+    var newHeight = document.documentElement.clientHeight;
+    //var newWidth = window.innerWidth;
+    //var newHeight = window.innerHeight;
 
     gameArea.style.width = newWidth + 'px';
     gameArea.style.height = newHeight + 'px';
@@ -32,6 +34,8 @@ function resizeGame()
     var gameCanvas = document.getElementById('gameCanvas');
     gameCanvas.width = newWidth;
     gameCanvas.height = newHeight;
+	
+	alert(newWidth + " x " + newHeight);
 
 	background();
 }
@@ -68,6 +72,10 @@ function background()
 	context.fillText("La Finestra è di " + xwin + "x" + ywin, 10, 30);
 	context.fillText("La Densità è di " + xdpi + "x" + ydpi, 10, 45);
 	context.fillText("DevicePixelRatio è di " + dpr, 10, 60);
+
+	var gameCanvas = document.getElementById('gameCanvas');
+
+	context.fillText("Il canvas è di " + gameCanvas.width + "x" + gameCanvas.height, 10, 75);
 }
 
 var totFrames = 0;
@@ -75,7 +83,7 @@ var frameInt = 25;
 var stepFrame = 150;
 var finalFrame = 200;
 
-if ( !window.requestAnimationFrame )
+if ( ! window.requestAnimationFrame )
 {
 	window.requestAnimationFrame = ( function()
 	{
@@ -112,12 +120,12 @@ function draw_anim(context, x, y, iobj)
                           x, y, canvas.width, canvas.width);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
 
-	context.clearRect(0, 60, 320, 15);
-	context.fillText("FrameInt " + frameInt + " totFrames " + totFrames, 10, 75);
+	context.clearRect(0, 75, 320, 15);
+	context.fillText("FrameInt " + frameInt + " totFrames " + totFrames, 10, 90);
 
 	setTimeout(function()
 	{
-		window.requestAnimationFrame(draw_anim(context, 2, 80, iobj));
+		window.requestAnimationFrame(draw_anim(context, 2, 100, iobj));
 	}, frameInt);
 }
 
@@ -157,19 +165,17 @@ function serAnim()
 <div id="gameArea">
   <canvas id="gameCanvas" style="border:1px solid #000000;"></canvas>
 </div>
-
 <script>
-var bckg = new Image();
-bckg.src = 'images/bg2.png';
-bckg.onload = function()
-{
-	resizeGame();
-	serAnim();
+	var bckg = new Image();
+	bckg.src = 'images/bg2.png';
+	window.onload = function()
+	{
+		resizeGame();
+		serAnim();
 
-	window.addEventListener('resize', resizeGame, false);
-	window.addEventListener('orientationchange', resizeGame, false);
-}
+		window.addEventListener('resize', resizeGame, false);
+		window.addEventListener('orientationchange', resizeGame, false);
+	}
 </script>
-
 </body>
 </html>
