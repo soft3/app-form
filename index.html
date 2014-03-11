@@ -9,13 +9,13 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-	alert("pippo");
 	document.addEventListener("backbutton", onBackKeyDown, false);
-	
+	alert("pippo");
+
 	var deviceOS  = device.platform  ;  //fetch the device operating system
 	var deviceOSVersion = device.version ;  //fetch the device OS version
-	alert("Device OS: " + deviceOS); 
-	alert("Device OS Version: " + deviceOSVersion);  
+	alert("Device OS: " + deviceOS);
+	alert("Device OS Version: " + deviceOSVersion);
 }
 
 function onBackKeyDown() {
