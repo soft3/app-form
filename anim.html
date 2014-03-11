@@ -46,8 +46,8 @@ function resizeGame()
     var gameCanvas = document.getElementById('gameCanvas');
     gameCanvas.width = newWidth;
     gameCanvas.height = newHeight;
-	
-	alert(newWidth + " x " + newHeight);
+
+	//alert(newWidth + " x " + newHeight);
 
 	background();
 }
@@ -73,10 +73,6 @@ function background()
 	var dpr = 1;
 	if (window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
 
-	//document.write("&nbsp;La Finestra è di " + xwin + "x" + ywin+ "<br>");
-	//document.write("&nbsp;La Densità è di " + xdpi + "x" + ydpi + "<br>");
-	//document.write("&nbsp;DevicePixelRatio è di " + dpr);
-
     context.font = '10pt Arial';
     context.fillStyle = 'black';
 
@@ -90,22 +86,7 @@ function background()
 	context.fillText("Il canvas è di " + gameCanvas.width + "x" + gameCanvas.height, 10, 75);
 }
 
-if ( ! window.requestAnimationFrame )
-{
-	window.requestAnimationFrame = ( function()
-	{
-		return window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.oRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element )
-		{
-			window.setTimeout( callback, frameInt );
-		};
-	} )();
-}
-
-function draw_anim(context, x, y, iobj)
+function draw_anim(context, iobj)
 {
 	totFrames += 1;
 	if (totFrames > 100) frameInt = 50;
@@ -124,20 +105,36 @@ function draw_anim(context, x, y, iobj)
     if (iobj.source != null)
         context.drawImage(iobj.source, iobj.current * iobj.width, 0,
                           iobj.width, iobj.height,
-                          x, y, canvas.width, canvas.width);
+                          2, 180, canvas.width, canvas.width);
     iobj.current = (iobj.current + 1) % iobj.total_frames;
 
-	context.clearRect(0, 75, 320, 15);
-	context.fillText("FrameInt " + frameInt + " totFrames " + totFrames, 10, 90);
+	context.clearRect(0, 60, 320, 15);
+	context.fillText("FrameInt " + frameInt + " totFrames " + totFrames, 10, 75);
 
 	setTimeout(function()
 	{
-		window.requestAnimationFrame(draw_anim(context, 2, 100, iobj));
+		window.requestAnimationFrame(function() {draw_anim(context, iobj);});
 	}, frameInt);
 }
 
 function serAnim()
 {
+	if ( ! window.requestAnimationFrame )
+	{
+		window.requestAnimationFrame = function()
+		{
+			return (
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function(callback, element ) {
+					window.setTimeout( callback );
+				}
+			);
+		} ();
+	}
+
 	var img = new Image();
 	img.onload = function ()
 	{
@@ -156,7 +153,7 @@ function serAnim()
     })(context, img_obj), 100);
 	*/
 
-	draw_anim(context, 2, 60, img_obj);
+	draw_anim(context, img_obj);
 }
 </script>
 </head>
