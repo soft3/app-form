@@ -19,8 +19,8 @@ function onBackKeyDown() {
 
 function onSuccess(position) {
 	var element = document.getElementById('geolocation');
-	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-						'Longitude: '          + position.coords.longitude             + '<br />';
+	element.innerHTML = 'Latitude: '  + position.coords.latitude  + '<br />' +
+						'Longitude: ' + position.coords.longitude + '<br />';
 }
 
 function onError(error) {
@@ -55,7 +55,7 @@ function continua()
 	document.write("<span style=\"font-size:14px;\">");
 	document.write("&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + " " + h4 + "</span>");
   </script>
-  <p id="geolocation">Loading device geolocation...</p>
+  <p id="geolocation"><span style="font-size:14px">Loading device geolocation...</span></p>
 </div>
 </body>
 </html>
