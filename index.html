@@ -10,12 +10,19 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
-	alert("pippo");
-
+/*
 	var deviceOS  = device.platform  ;  //fetch the device operating system
 	var deviceOSVersion = device.version ;  //fetch the device OS version
 	alert("Device OS: " + deviceOS);
 	alert("Device OS Version: " + deviceOSVersion);
+*/
+	var element = document.getElementById('deviceProperties');
+	element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+						'Device Cordova: '  + device.cordova  + '<br />' +
+						'Device Platform: ' + device.platform + '<br />' +
+						'Device UUID: '     + device.uuid     + '<br />' +
+						'Device Model: '    + device.model    + '<br />' +
+						'Device Version: '  + device.version  + '<br />';	
 }
 
 function onBackKeyDown() {
