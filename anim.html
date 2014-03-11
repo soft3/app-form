@@ -17,11 +17,23 @@ function onBackKeyDown() {
 }
 </script>
 <script type="text/javascript">
+var totFrames = 0;
+var frameInt = 25;
+var stepFrame = 150;
+var finalFrame = 200;
+var img_obj = {
+	'source': null,
+	'current': 0,
+	'total_frames': 6,
+	'width': 635,
+	'height': 640,
+};
+
 function resizeGame()
 {
     var gameArea = document.getElementById('gameArea');
-    var newWidth = document.documentElement.clientWidth;
-    var newHeight = document.documentElement.clientHeight;
+    var newWidth = document.documentElement.clientWidth - 10;
+    var newHeight = document.documentElement.clientHeight - 10;
     //var newWidth = window.innerWidth;
     //var newHeight = window.innerHeight;
 
@@ -78,11 +90,6 @@ function background()
 	context.fillText("Il canvas è di " + gameCanvas.width + "x" + gameCanvas.height, 10, 75);
 }
 
-var totFrames = 0;
-var frameInt = 25;
-var stepFrame = 150;
-var finalFrame = 200;
-
 if ( ! window.requestAnimationFrame )
 {
 	window.requestAnimationFrame = ( function()
@@ -131,14 +138,6 @@ function draw_anim(context, x, y, iobj)
 
 function serAnim()
 {
-	var img_obj = {
-		'source': null,
-		'current': 0,
-		'total_frames': 6,
-		'width': 635,
-		'height': 640,
-	};
-
 	var img = new Image();
 	img.onload = function ()
 	{
@@ -166,16 +165,17 @@ function serAnim()
   <canvas id="gameCanvas" style="border:1px solid #000000;"></canvas>
 </div>
 <script>
-	var bckg = new Image();
-	bckg.src = 'images/bg2.png';
-	window.onload = function()
-	{
-		resizeGame();
-		serAnim();
+var bckg = new Image();
+bckg.src = 'images/bg2.png';
+window.onload = function()
+{
+	resizeGame();
 
-		window.addEventListener('resize', resizeGame, false);
-		window.addEventListener('orientationchange', resizeGame, false);
-	}
+	window.addEventListener('resize', resizeGame, false);
+	window.addEventListener('orientationchange', resizeGame, false);
+
+	serAnim();
+}
 </script>
 </body>
 </html>
