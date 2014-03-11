@@ -4,7 +4,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "net.soft3.app-form"
-        version = "1.0.45">
+        version = "1.0.46">
 
     <name>YOUNGO App</name>
 
@@ -53,6 +53,7 @@ permission on your app, which PhoneGap requires.
 A list of available plugins are available at https://build.phonegap.com/docs/plugins
 -->
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.core.geolocation" />
 
     <!-- Define app icon for each platform. -->
     <icon src="images/icon.png" />

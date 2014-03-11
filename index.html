@@ -10,37 +10,30 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
-/*
-	var deviceOS  = device.platform  ;  //fetch the device operating system
-	var deviceOSVersion = device.version ;  //fetch the device OS version
-	alert("Device OS: " + deviceOS);
-	alert("Device OS Version: " + deviceOSVersion);
-*/
-	var element = document.getElementById('deviceProperties');
-	element.innerHTML = 'Device Platform: ' + device.platform + '<br />' +
-						'Device Version: '  + device.version  + '<br />' +
-						'Device UUID: '     + device.uuid     + '<br />';	
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 function onBackKeyDown() {
     return false;
 }
-</script>
-<script type="text/javascript">
-function anyName(){
-/*
-    var varname=Math.max(
-        document.documentElement.clientHeight,
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight
-    );
 
-    document.getElementById('istruzioni').style.height=window.innerHeight + 'px';
-*/
+function onSuccess(position) {
+	var element = document.getElementById('geolocation');
+	element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+						'Longitude: '          + position.coords.longitude             + '<br />' +
+						'Altitude: '           + position.coords.altitude              + '<br />' +
+						'Accuracy: '           + position.coords.accuracy              + '<br />' +
+						'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+						'Heading: '            + position.coords.heading               + '<br />' +
+						'Speed: '              + position.coords.speed                 + '<br />' +
+						'Timestamp: '          + position.timestamp                    + '<br />';
 }
 
+function onError(error) {
+	return false;
+}
+</script>
+<script type="text/javascript">
 function continua()
 {
 	window.location="form1-320.html";
@@ -68,7 +61,7 @@ function continua()
 	document.write("<span style=\"font-size:14px;\">");
 	document.write("&nbsp;La Finestra è di " + h1 + " " + h2 + " " + h3 + " " + h4 + "</span>");
   </script>
-  <p id="deviceProperties">Loading device properties...</p>
+  <p id="geolocation">Loading device geolocation...</p>
 </div>
 </body>
 </html>
