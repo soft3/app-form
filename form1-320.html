@@ -13,12 +13,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-	var deviceos  = device.platform;
+	var deviceos = device.platform;
 	var deviceosversion = device.version;
 	var uuid = device.uuid;
-	
-	//Create an input type dynamically.
+	/*
     var element = document.createElement("input");
     element.setAttribute("type", "hidden");
     element.setAttribute("value", deviceos);
@@ -38,9 +38,24 @@ function onDeviceReady() {
     element.setAttribute("value", uuid);
     element.setAttribute("name", "uuid");
     foo = document.getElementById("duuid");
-    foo.appendChild(element);
+    foo.appendChild(element);	
+	*/
+	document.getElementById("deviceos").value = deviceos;
+	document.getElementById("deviceosversion").value = deviceosversion;
+	document.getElementById("uuid").value = uuid;
 }
 
+function onSuccess(position) {
+	var lati = position.coords.latitude;
+	var longi = position.coords.longitude;
+	
+    document.getElementById('lati').value = lati;
+	document.getElementById('longi').value = longi;
+}
+
+function onError(error) {
+	return false;
+}
 function onBackKeyDown() {
     return false;
 }
@@ -161,9 +176,16 @@ function onBackKeyDown() {
 	<div align="right" style="margin-top: 8px;">
 		<input type="button" name="button" value="" onclick="validate();" />&nbsp;&nbsp;
 	</div>
+	<input type="hidden" name="deviceos" id="deviceos" value="0">
+	<input type="hidden" name="deviceosversion" id="deviceosversion" value="0">
+	<input type="hidden" name="uuid" id="uuid" value="0">
+	<input type="hidden" name="lati" id="lati" value="0">
+	<input type="hidden" name="longi" id="longi" value="0">
+	<!---
 	<span id="dos">&nbsp;</span>
 	<span id="dosv">&nbsp;</span>
 	<span id="duuid">&nbsp;</span>
+	-->
   </form>
 </div>
 </body>

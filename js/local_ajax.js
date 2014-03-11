@@ -15,6 +15,8 @@ function pluto()
 	contatto.deviceos = document.form1.deviceos.value;
 	contatto.deviceosversion = document.form1.deviceosversion.value;
 	contatto.uuid = document.form1.uuid.value;
+	contatto.lat = document.form1.lat.value;
+	contatto.longi = document.form1.longi.value;
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible';
