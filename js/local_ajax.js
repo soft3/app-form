@@ -14,6 +14,7 @@ function pluto()
 	contatto.liberatoria = document.form1.liberatoria.checked;
 	contatto.deviceos = document.form1.deviceos.value;
 	contatto.deviceosversion = document.form1.deviceosversion.value;
+	contatto.uuid = document.form1.uuid.value;
 
 	var loader = document.getElementById('loader');
 	loader.style.visibility = 'visible';
