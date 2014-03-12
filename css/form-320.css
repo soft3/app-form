@@ -22,7 +22,7 @@ form {
 label {
 	width: 310px;
 	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
-	color:#000066; 
+	color:#000066;
 	/*text-shadow: 2px 2px 1px #000;	*/
 }
 
@@ -40,7 +40,7 @@ textarea {
 }
 
 #tutto320 {
-	width: 100%; 
+	width: 100%;
 	height: 680px;
 	/*
 	background: url('../images/bg-320.png') no-repeat no-repeat center center fixed;
@@ -52,8 +52,8 @@ textarea {
 }
 
 #risultato320 {
-	width: 100%; 
-	height: 100%; 
+	width: 100%;
+	height: 100%;
 	position:absolute;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
@@ -65,11 +65,11 @@ textarea {
 }
 
 #form320 {
-	text-align:center; 
-	color:#000066; 
+	text-align:center;
+	color:#000066;
 	font-size: 16px;
 	/*text-shadow: 2px 2px 1px #000;*/
-	padding-bottom: 10px; 
+	padding-bottom: 10px;
 }
 
 #user-details {

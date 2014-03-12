@@ -129,12 +129,12 @@ function onBackKeyDown() {
     <select name="anno_b1" class="ora">
       <option value="0" selected="selected">Anno</option>
 	  <script>
-		var d = new Date();
-		var anno = d.getFullYear();
-		for (ii=anno;ii>=(anno-24);ii--)
-		{
-			document.write("<option value=\"" + ii + "\">" + ii + "</option>");
-		}
+	  var d = new Date();
+	  var anno = d.getFullYear();
+	  for (ii=anno;ii>=(anno-24);ii--)
+	  {
+		  document.write("<option value=\"" + ii + "\">" + ii + "</option>");
+	  }
 	  </script>
     </select>
     <div style="height:8px;">&nbsp;</div>
