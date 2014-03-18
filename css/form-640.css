@@ -1,20 +1,12 @@
-body {
+.liberatoria {
 	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
-	margin:0;
-	color:#000;
-	width:640px;
-	height: 960px;
-	position:relative;
-}
-
-.Stile1 {
-	font: 16px normal Verdana, Arial, Helvetica, sans-serif;
-	color: #FFF;
+	color: #000066;
 }
 form {
 	width: 620px;
-	background-image: url('../images/bg.jpg');
+	background-image: url('../images/bg-640.png');
 	padding-left: 20px;
+	padding-bottom: 30px;
 }
 
 label {
@@ -33,6 +25,30 @@ textarea {
 	padding-top: 6px;
 	padding-right: 4px;
 	font: 18px normal Verdana, Arial, Helvetica, sans-serif;
+}
+
+#tutto640 {
+	width: 100%;
+	height: 700px;
+}
+
+#risultato640 {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	background: url('../images/bg-640.png') no-repeat no-repeat center center fixed;
+}
+
+#form640 {
+	text-align:center;
+	color:#000066;
+	font-size: 20px;
+	padding-bottom: 10px;
+	padding-left:2px;
+	padding-right:2px;
+	background-color:#00ADE5;
 }
 
 #user-details {
