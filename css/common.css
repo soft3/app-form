@@ -48,6 +48,15 @@ input {
 	padding-right: 6px;
 	margin-right: 10px;
 }
+.vuoto {
+	border: none;
+	background: url('../images/vuoto.png') no-repeat;
+	width: 270px;
+	height: 42px;
+	padding-left: 6px;
+	padding-right: 6px;
+	margin-right: 10px;
+}
 .interesse {
 	width: 15px;
 	height: 15px;

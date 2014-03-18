@@ -4,6 +4,7 @@
 <title>YOUNGO Registration Form</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/checkbox.css" />
 <link rel="stylesheet" type="text/css" href="css/form-320.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/local_ajax.js"></script>
@@ -42,15 +43,15 @@ function onBackKeyDown() {
   <div id="form320">Compila il form sottostante con i tuoi dati<br />
   I campi contrassegnati con * sono obbligatori</div>
   <form id="form1" name="form1" action="" method="post" onsubmit="return false">
-    <label>Nome Genitore*<br />
+    <label>Nome*<br />
     </label>
     <input type="text" name="nome" class="nome" value="" size="40" maxlength="42" required="required" />
     <br />
-    <label>Cognome Genitore*<br />
+    <label>Cognome*<br />
     </label>
     <input type="text" name="cognome" class="nome" value="" size="40" maxlength="42"  required="required"/>
     <br />
-    <label>Data di Nascita Genitore*<br />
+    <label>Data di Nascita*<br />
     </label>
     <select name="giorno_nascita" class="giorno">
       <option value="0" selected="selected">Giorno</option>
@@ -96,6 +97,10 @@ function onBackKeyDown() {
     </label>
     <input type="text" name="email" class="email" value="" size="40" maxlength="42" required="required" pattern="^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$"/>
     <br />
+    <label>CAP *<br />
+    </label>
+    <input type="text" name="cap" class="vuoto" value="" size="5" maxlength="7" required="required" />
+    <br />
     <label>Nome Bambino 1*<br />
     </label>
     <input type="text" name="nome_b1" class="nome" value="" size="40" maxlength="42" required="required"/>
@@ -137,11 +142,17 @@ function onBackKeyDown() {
 		}
 	  </script>
     </select>
-    <div style="height:8px;">&nbsp;</div>
+    <div style="height:15px;">&nbsp;</div>
+	<!---
 	<label for="liberatoria"><span class="liberatoria"><b>Liberatoria trattamento dati (Dlg 196 del 30 Giugno 2003)</b></span></label>
 	<br />
 	<input type="checkbox" name="liberatoria" value="1" class="interesse"/>
+	--->
+	<input type="checkbox" id="liberatoria" class="css-checkbox lrg" name="liberatoria" value="1"/>
+	<label for="liberatoria" name="checkbox69_lbl" class="css-label lrg vlad"><b>Liberatoria trattamento dati (Dlg 196 del 30 Giugno 2003)</b></label>
     <br />
+	<br />
+    <div style="height:8px;">&nbsp;</div>
 	<div id="loader">
 	    <img src="images/ajax-loader.gif"/>
 	</div>
